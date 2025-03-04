@@ -17,6 +17,7 @@ public class Televisao
         }
         Tamanho = tamanho;
         Volume = VOLUME_PADRAO;
+        Canal = CANAL_PADRAO;
     }
 
     //Optamos pela utilização da constante para tornar o código mais legível.
@@ -25,8 +26,12 @@ public class Televisao
     private const int VOLUME_MAXIMO = 12;
     private const int VOLUME_MINIMO = 0;
     private const int VOLUME_PADRAO = 10;
+    private const int CANAL_PADRAO = 0;
+    private const int CANAL_MAXIMO = 999;
+    private const int CANAL_MINNIMO = 0;
 
     private int _ultimoVolume = VOLUME_PADRAO;
+    private int _ultimoCanal = CANAL_PADRAO;
 
 
 
@@ -87,5 +92,44 @@ public class Televisao
             Volume = _ultimoVolume;
             Console.WriteLine($"O volume da TV é: {Volume}.");
         }
+    }
+}
+
+ public void AumentarCanal()
+{
+    if (Canal < CANAL_MAXIMO)
+    {
+        Canal++;
+        _ultimoCanal = Canal;
+    }
+    else
+    {
+        Console.WriteLine("A TV já está no canal máximo permitido");
+    }
+}
+
+public void DiminuirCanal()
+{
+    if (Canal > CANAL_MINNIMO)
+    {
+        Canal--;
+        _ultimoCanal = Canal;
+    }
+    else
+    {
+        Console.WriteLine("A TV já está no canal mínimo permitido");
+    }
+}
+
+public void SelecionarCanal(int canal)
+{
+    if (canal >= CANAL_MINNIMO && canal <= CANAL_MAXIMO)
+    {
+        Canal = canal;
+        _ultimoCanal = canal;
+    }
+    else
+    {
+        Console.WriteLine($"Canal {canal} não suportado. Canais válidos: {CANAL_MINNIMO} a {CANAL_MAXIMO}.");
     }
 }
