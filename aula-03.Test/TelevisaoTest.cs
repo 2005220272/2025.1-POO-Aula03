@@ -122,7 +122,7 @@ public class TelevisaoTests
     [TestMethod]
     public void Deve_Aumentar_Canal()
     {
-        var tv = new Televisao(32);
+        var tv = new Televisao(25f);
         tv.AumentarCanal();
         Assert.Equal(1, tv.Canal);
     }
@@ -130,7 +130,7 @@ public class TelevisaoTests
     [TestMethod]
     public void Deve_Diminuir_Canal()
     {
-        var tv = new Televisao(32);
+        var tv = new Televisao(25f);
         tv.SelecionarCanal(10);
         tv.DiminuirCanal();
         Assert.Equal(9, tv.Canal);
@@ -139,7 +139,7 @@ public class TelevisaoTests
     [TestMethod]
     public void Deve_Selecionar_Canal()
     {
-        var tv = new Televisao(32);
+        var tv = new Televisao(25f);
         tv.SelecionarCanal(505);
         Assert.Equal(505, tv.Canal);
     }
@@ -147,7 +147,7 @@ public class TelevisaoTests
     [TestMethod]
     public void Nao_Deve_Selecionar_Canal_Invalido()
     {
-        var tv = new Televisao(32);
+        var tv = new Televisao(25f);
         tv.SelecionarCanal(1000);
         Assert.Equal(0, tv.Canal);
     }
@@ -156,7 +156,7 @@ public class TelevisaoTests
      [TestMethod]
     public void Deve_Selecionar_Canal()
     {
-        var tv = new Televisao(32);
+        var tv = new Televisao(25f);
         tv.SelecionarCanal(505);
         Assert.Equal(505, tv.Canal);
     }
@@ -164,7 +164,7 @@ public class TelevisaoTests
     [TestMethod]
     public void Nao_Deve_Selecionar_Canal_Invalido()
     {
-        var tv = new Televisao(32);
+        var tv = new Televisao(25f);
         tv.SelecionarCanal(1000);
         Assert.Equal(0, tv.Canal);
     }
