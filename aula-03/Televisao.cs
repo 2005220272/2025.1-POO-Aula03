@@ -19,6 +19,18 @@ public class Televisao
         Volume = VOLUME_PADRAO;
         Canal = CANAL_PADRAO;
     }
+    public void SelecionarCanal(int canal)
+{
+    if (canal >= CANAL_MINNIMO && canal <= CANAL_MAXIMO)
+    {
+        Canal = canal;
+        _ultimoCanal = canal;
+    }
+    else
+    {
+        Console.WriteLine($"Canal {canal} não suportado. Canais válidos: {CANAL_MINNIMO} a {CANAL_MAXIMO}.");
+    }
+}
 
     //Optamos pela utilização da constante para tornar o código mais legível.
     private const float TAMANHO_MINIMO = 22;
@@ -48,7 +60,18 @@ public class Televisao
     public float Tamanho { get; }
     public int Resolucao { get; set; }
     public int Volume { get; private set; }
-    public int Canal { get; set; }
+    public int Canal
+    {
+        get { return _ultimoCanal; }
+        set
+        {
+            if (value < CANAL_MINIMO || value > CANAL_MAXIMO)
+            {
+                throw new ArgumentOutOfRangeException($"O canal ({value}) não é suportado!");
+            }
+            _ultimoCanal = value;
+        }
+    }
     public bool Estado { get; set; }
 
     public void AumentarVolume()
@@ -121,15 +144,4 @@ public void DiminuirCanal()
     }
 }
 
-public void SelecionarCanal(int canal)
-{
-    if (canal >= CANAL_MINNIMO && canal <= CANAL_MAXIMO)
-    {
-        Canal = canal;
-        _ultimoCanal = canal;
-    }
-    else
-    {
-        Console.WriteLine($"Canal {canal} não suportado. Canais válidos: {CANAL_MINNIMO} a {CANAL_MAXIMO}.");
-    }
-}
+
