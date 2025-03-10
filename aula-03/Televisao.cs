@@ -24,7 +24,7 @@ public class Televisao
     if (canal >= CANAL_MINNIMO && canal <= CANAL_MAXIMO)
     {
         Canal = canal;
-        _ultimoCanal = canal;
+        _ultimoCanal = Canal;
     }
     else
     {
