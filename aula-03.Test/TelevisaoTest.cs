@@ -115,7 +115,6 @@ public class TelevisaoTest
         televisao.AlternarModoMudo();
         Assert.AreEqual(volumeInicial, televisao.Volume);
     }
-    using aula_03;
 
 public class TelevisaoTests
 {
@@ -124,7 +123,7 @@ public class TelevisaoTests
     {
         var tv = new Televisao(25f);
         tv.AumentarCanal();
-        Assert.Equal(1, tv.Canal);
+        Assert.AreEqual(1, tv.Canal);
     }
 
     [TestMethod]
@@ -133,7 +132,7 @@ public class TelevisaoTests
         var tv = new Televisao(25f);
         tv.SelecionarCanal(10);
         tv.DiminuirCanal();
-        Assert.Equal(9, tv.Canal);
+        Assert.AreEqual(9, tv.Canal);
     }
 
     [TestMethod]
@@ -141,7 +140,7 @@ public class TelevisaoTests
     {
         var tv = new Televisao(25f);
         tv.SelecionarCanal(505);
-        Assert.Equal(505, tv.Canal);
+        Assert.AreEqual(505, tv.Canal);
     }
 
     [TestMethod]
@@ -149,7 +148,7 @@ public class TelevisaoTests
     {
         var tv = new Televisao(25f);
         tv.SelecionarCanal(1000);
-        Assert.Equal(0, tv.Canal);
+        Assert.AreEqual(0, tv.Canal);
     }
 }
 
@@ -158,7 +157,7 @@ public class TelevisaoTests
     {
         var tv = new Televisao(25f);
         tv.SelecionarCanal(505);
-        Assert.Equal(505, tv.Canal);
+        Assert.AreEqual(505, tv.Canal);
     }
 
     [TestMethod]
@@ -166,10 +165,10 @@ public class TelevisaoTests
     {
         var tv = new Televisao(25f);
         tv.SelecionarCanal(1000);
-        Assert.Equal(0, tv.Canal);
+        Assert.AreEqual(0, tv.Canal);
     }
 }
 
 
     
-}
+
